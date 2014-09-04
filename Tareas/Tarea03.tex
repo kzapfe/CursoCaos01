@@ -1,0 +1,136 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx} 
+\usepackage{float} %Forzamos a las figuras a estar DONDE QUEREMOS
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\rd}{\!\!\mathrm{d}}
+ 
+\newenvironment{theorem}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Ejercicio]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Pregunta]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Tarea Semanal 3}%replace X with the appropriate number
+\author{Karel Zapfe\\ %replace with your name
+Introducción al Caos y Dinámica No Lineal} %if necessary, replace with your course title
+ 
+\maketitle
+
+Desempolvemos y mejoremos la simulación del péndulo que hicimos para la Tarea 1.
+Si alguno de ustedes no la consiguió hacer bien, este es el momento para
+formalizarla y dejarla perfecta. Si queremos tener una simulación
+super precisa, le pedimos a Alejandra que nos comparta  su ejemplo de como lo resolvió usando
+Runge-Kutta. 
+
+El espacio fase del péndulo es un cilindoro, ya que la ``posición'' es una variable angular,
+pero el momento es una variable potencialmente no acotada, es decir, un número real. 
+Esto quiere decir que hay que identificar extremos opuestos del eje $q=:\theta$. 
+En particular a mi me gusta identificar $\theta=\-pi$ con $\theta=pi$, de forma que el punto
+de equilibrio sea $\theta=0$  y el punto inestable el ángulo opuesto, es decir,
+el ángulo de identificación. Cada uno es libre de usar su propia convención, pero
+de esta forma las ecuaciones Lagrangianas quedan con la forma particularmente simple 
+del primer dia. En mi notación $l$ es el momento (angular) conjugado a $\theta$. Sea
+$L$ la longitud del brazo del péndulo y $m$ su masa:
+\begin{equation}
+H(\theta, l)= \frac{l^2}{2m R^2}-mgR \cos\theta
+\end{equation}
+Podemos escoger unidades tales que $mgR=1$ y $mR^2=1$. Con eso el sistema termina con 
+la siguientes ecuaciones de movimiento:
+\begin{align}
+\dot{l} & = -\frac{\partial H}{\partial \theta}  =  -\sin \theta, \\
+\dot{\theta} & = \frac{\partial H}{\partial l} = l. \\
+\end{align}
+
+Dado que el sistema es conservativo, básicamente la energia indexa las trayectorias.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{EspacioPenduloSimple01.png}
+\end{center}
+\caption{ El espacio fase del Péndulo, fibrado por variedades de energia constante.
+En este caso, coinciden con las trayectorias}.
+\end{figure}
+
+Les deje en \verb:github: dos archivos auxiliares, aparte de la fuente de este mismo
+archivo, para que se inspiren. El pendulo simple, resuelto a lo Euler en python,
+en \verb:PenduloSimple.py:, y como hice el dibujo, en \verb:GraficandoPenduloSimple01.gpl:.
+
+
+\begin{question}{1}
+Veamos que tan mezclante es el sistema, si es que lo es. 
+Considera un pequeño rectangulo de condiciones inciciales, centrado
+en algun lugar del espacio fase. 
+\begin{itemize} 
+\item Coloca tu cuadrado de condiciones iniciales en un lugar del espacio fase,
+y muestrame sus imagenes para varias selecciones de $t$. Deja algunas
+lineas de energia constante debajo, como referencia visual,
+para que veamos por donde se mueve el cuadrado. Prueba para $t$ pequeño (del
+orden de tu $dt$),
+$t$ mediano (del orden de 10 o 100 $dt$s), y muy grande. ¿Qué observas?
+\item Repite lo anterior, pero busca lugares especiales del espacio fase
+para colocarlo. Ya sabes cuales. ¿Cómo le llamarías a las figuras producidas?
+\item El sistema, sobre el espacio fase total, no puede ser mezclante, porque es
+conservativo. Explica este punto.
+\item ¿Podría ser mezclante en cada ``superficie'' de energía constante?
+\end{itemize}
+\end{question}
+ 
+\begin{question}{2}
+Dibujen el diagrama de las escaleras y caracoles para el mapeo de Bernoulli.
+\begin{itemize}
+\item Si exageran en el número de lineas, queda muy claro algo... ¿qué?
+\item Busquen una orbita periodica de periodo medio, por decir algo, 10. Hagan el diagrama.
+\item ¿Que pasa si prueban hacer algo similar a lo del problema anterior? Usen una linea
+de condiciones iniciales. El sistema es mezclante, aunque la medida conservada no sea intuitiva. 
+De todas maneras, algo se debe de poder percibir. Inventen un análisis gráfico que
+delate esta propiedad.
+\end{itemize}  
+\end{question}
+
+\begin{question}{3}
+Hay un mapeo que es algo así como una mezcla del mapeo de Bernoulli y el mapeo
+logístico con $k=4$. Se llama el mapeo de la tienda y esta dado por la regla siguiente,
+en el intervalo unitario.
+\begin{equation}
+T(x) = \begin{cases} 2x &\mbox{si } x < 1/2 \\ 
+2(1-x) & \mbox{si } 1/2 <x \leq 1. \end{cases} 
+\end{equation}
+\begin{itemize}
+\item ¿Porqué se llama el mapeo de la tienda?
+\item ¿Porque digo que es algo así como una mezcla de los otros dos?
+\item ¿Qué tan lejos está del mapeo de Bernoulli? ¿Lo puedes transformar en aquél?
+(Esto sería, en lenguaje matematico moderno, buscar una biyección entre los dos sistemas
+dinámicos tal que sean uno conjugado del otro).
+\item  Punto Extra: Si se parece al mapeo logístico, tal vez podemos reducir el tamaño de la tienda
+con algun parámetro... y hacer un diagrama de bifurcaciones. 
+\end{itemize}
+
+\end{question}
+
+\end{document}

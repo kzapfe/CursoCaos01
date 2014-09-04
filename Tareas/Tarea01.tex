@@ -1,0 +1,93 @@
+\documentclass[letterpaper,10pt, jcp, aps, preprint]{revtex4-1}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amsfonts}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{authblk} parece ser que ya esta metido cuando usas preprint
+
+
+
+%\bibliographystyle{alpha}
+
+%opening
+
+%\author{Rosa Rodríguez \& David P.~Sanders \& W. P. K. Zapfe}
+%\affil{Departamento de Física, Facultad de Ciencias, Universidad Nacional Autónoma de México, Ciudad Universitaria, Del.~Coyoacán, México D.F. 04510, Mexico}
+
+\usepackage{mathptmx}
+% I dont know if that package is compatible with revtex.
+
+\newcommand{\defeq}{:=}
+\newcommand{\mean}[1]{\left \langle #1 \right \rangle}
+\newcommand{\rd}{\!\!\!\!\mathrm{d}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\indicator}[1]{\mathbf{1}_{ \{   #1 \} } } 
+\newcommand{\etal}{\emph{et al.\ }} 
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+
+
+\begin{document}
+
+
+\title{Tarea Uno}
+\author{Karel Zapfe}
+\email{karelz@fis.unam.mx}
+
+
+\begin{abstract}
+A entregar el próximo miércoles, 20 de agosto. Se vale entregar a mano, o por
+correo electrónico, antes de las 16 horas. Formatos aceptables, pdf o txt (texto crudo)
+para el texto, cualquier formato de imagenes no muy pesado (incluyendo dibujos a mano)
+para las graficas. \\
+Voy a ir poniendo programas ejemplo y ayudas computacionales en github:\\
+\url{https://github.com/kzapfe//CursoCaos01}.\\
+Sed libres de usarlos, comentarlos e incluso mejorarlos.
+\end{abstract}
+
+\maketitle
+
+\section{Ejercicio:}
+
+
+
+La ecuación de un péndulo simple en unidades ``naturales'' es
+\begin{equation}
+\ddot{\theta}+\omega\sin\theta=0.
+\end{equation}
+Usando una variable auxiliar $p\defeq \dot{\theta}$ podemos escribir
+esto como un par de ecuaciones parciales ordinarias de primer orden:
+\begin{align}
+\dot{\theta} &=p\\
+\dot{p} &= -\omega \sin\theta.
+\end{align}
+Por cierto, este truco se puede usar siempre. Una ecuación diferencial
+de orden $n$ es equivalente, de esta forma, a $n$ ecuaciones 
+diferenciales de orden $1$.
+
+\subsection{}
+Haz una gráfica de las órbitas de las soluciones en el espacio
+$(\theta, p)$, para varias condiciones iniciales. Indica las condiciones
+iniciales.
+
+\subsection{}
+¿Recuerdas la aproximación para $\theta\ll 1$? Has una gráfica también en el
+mismo espacio de ésta. Compara las curvas de ambos espacios (si quieres, encimalos). 
+¿Qué notas?
+
+\subsection{}
+Hay dos puntos muy especiales en la grafica del problema ``A''. ¿Cuáles?
+¿Qué representan? ¿Cómo los llamarías?
+
+\section{Ejercicio:}
+
+Leete el texto adjunto. Enjoy. 
+
+\end{document}

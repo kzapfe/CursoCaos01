@@ -1,0 +1,110 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx} 
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\rd}{\!\!\mathrm{d}}
+ 
+\newenvironment{theorem}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Ejercicio]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Pregunta]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Tarea Semanal 2}%replace X with the appropriate number
+\author{Karel Zapfe\\ %replace with your name
+Introducción al Caos y Dinámica No Lineal} %if necessary, replace with your course title
+ 
+\maketitle
+ Supongamos que tenemos un sistema dinámico en un espacio fase $\M$ definido 
+por la transformación $T$ (no necesariamente invertible) y que preserva
+una medida $\mu$. Por simplicidad supondremos que el sistema es discreto
+en el tiempo (las iteraciones de $T$ están indexadas por un número entero).
+La medida total de nuesto espacio es 1, es decir, $\mu(\M)=1$.
+La noción que usan los matematicos de  \emph{``casi donde sea''} 
+quiere decir, en todos lados excepto en conjuntos de medica cero. 
+ 
+
+\begin{lemma}{Definiciones Equivalentes} 
+  Las siguientes nociones de Ergodicidad son equivalentes. 
+  \begin{itemize}
+  \item Los únicos conjuntos (medibles) que se mantienen invariantes bajo la transformación son aquellos de medida 0 o 1, excepto subconjuntos despreciables:
+    \begin{equation*}
+      T^{-1}(A)=A \quad ( \mod 0 )\Leftrightarrow \mu(A)=0, 1
+    \end{equation*}
+  \item El promedio de cualquier función integrable a lo largo de una órbita
+    coincide con el promedio del espacio fase, para casi cualquier condición
+    inicial:
+    \begin{equation*}
+      \lim_{N\rightarrow \infty} \frac{1}{N}\sum_{t=0}^{N} f(T^t(x)) = \int_\M \rd x f(x)
+    \end{equation*}
+  \item Las únicas funciones invariantes frente a la transformación 
+    son constantes \emph{casi donde sea}:
+    \begin{equation*}
+      f(T(x))=f(x) \Leftrightarrow f(x)=\text{constante}.
+    \end{equation*}
+  \end{itemize}
+
+\end{lemma}
+
+Para entender bien estas nociones deberán saber que no todos los conjuntos
+son \emph{medibles}. Existen subconjuntos de un espacio que donde la 
+nocion de medida no esta definida. Vamos a hacer un poco de investigación
+de ``campo'' al respecto.
+
+
+\begin{question}{1}
+Averiguen con un amigo matemático que haya cursado Análisis I y II o con algún
+físico que haya llevado un curso de Matemáticas avanzadas que
+quiere decir $\sigma$-álgebra (sigma-álgebra) en el contexto de 
+subconjuntos de un conjunto. 
+De paso averiguen que quiere decir álgebra en el mismo contexto y que son
+los borelianos. Escribanme las definiciones de forma que cualquiera de 
+ustedes las entienda, pero que sean rigurosas. Las medidas están definidas
+para conjuntos que pertenecen esta $\sigma$-álgebra. Nosotros
+usaremos medidas suaves, como longitud, área, volumen, sobre los borelianos.
+\end{question}
+
+
+\begin{question}{2}
+Para el mapeo logístico $T(x)=kx(1-x)$, encontrar analíticamente
+las siguientes cualidades. 
+\begin{itemize} 
+\item Los puntos fijos (puntos de periodo 1) en función de $k$.
+\item La derivada del mapeo evaluada en el mismo punto. ¿En que valor
+de $k$ deja de ser estable? ¿que otros valores \emph{chistosos} ocurren?
+\item Hagan unas gráficas bonitas que ilustren los dos puntos anteriores. 
+\item Punto Extra: ¿Pueden hacer lo mismo para los puntos de periodo 2?
+  ¿En que momento aparecen, al menos?
+\end{itemize}
+\end{question}
+ 
+\begin{question}{3}
+Lean el \emph{paper} adjunto, \emph{``Chaos in a double Pendulum''}.
+\end{question}
+
+\end{document}

@@ -32,7 +32,7 @@ for i in range(1,numparticles):
     q=np.random.uniform(0, dospi)
     p=np.random.uniform(-2.0, 2.0)
     Punto=Pendulo(q,p)
-    Energia=p*p/2-grav*np.cos(q)
+    Energia=p*p/2.-grav*np.cos(q)
     for j in range(1,tmax):
         Punto.step(dt)
         print(Punto.q, Punto.p, j, Energia, file=archivo)
