@@ -1,0 +1,113 @@
+Muy bien, ahora ya tenemos varias definiciones de propiedades
+de sistemas dinámicos que podemos identificar con comportamiento
+caótico. Repasemos un poco esos conceptos y tratemos
+de pensar en que **no** es un sistema caótico. Nuestro paradígma
+de rigor y sofisticación matemática y el proposito central de este
+curso es hablar de Caos en Mecánica Clásica, así que pensaremos
+todo el tiempo en como aplicar estos conceptos a esta teoría en particular,
+aunque es probable que el semestre no nos de para ello.
+
+Recapitulemos: de forma más o menos informal, el Caos en sistemas
+dinámicos es la sensibilidad a las condiciones iniciales, una
+sensibilidad *exagerada* que no permite o que dificulta de sobremanera
+hacer predicciones exactas sobre órbitas particulares en el espacio fase.
+Dicho de otro modo, seguir la trayectoria del objeto que nuestro
+aparato matemático modela usando sólo las expresiones matemáticas resulta
+arduo y poco confiable. ¿Cómo formalizamos el concepto de Caos?
+
+Pues hasta ahora hemos visto que *"Caos"* en realidad es un conglomerado
+de propiedades cada una de las cuales está relacionada con la noción anterior
+de diferente forma. Si nuestro sistema dinámico tiene un espacio
+fase de medida finita, la propiedad más global de la que podemos hablar
+es la ergodicidad, que definimos de cualquiera de las siguientes formas:
+
+* Los unicos conjuntos que se mapean en si mismos son los de medida 0 o 1, es
+decir, prácticamente o prácticamente nada.
+* Promediar una función a lo largo de una orbita da lo mismo que promediarla
+en el espacio fase TOTAL.
+* Las unicas funciones invariantes frente a la evolución temporal son
+las constantes.
+
+Esto como podemos apreciar, hace referencia al sistema dinámico en su totalidad.
+Siendo un poco cuidadosos, podríamos tal vez hablar de ergodicidad local. De
+momento no lo hagamos. Intuitivamente podemos ver que si un sistema es ergódico,
+habrá una gran mayoría de órbitas que visiten tan cerca como queramos cualquier
+rincón del espacio fase, es decir, que basicamente cualquier orbita sea un buen
+muestreo de todo el espacio fase. Un sistema ergódico no es *necesariamente*
+sensible a las condiciones iniciales en el sentido de impredicibilidad, pero
+podemos intuir que ya algo raro esta pasando, ya que nuestra *partícula* es
+básicamente alguien que se pasea por todos los estados posibles.
+
+Una noción más fuerte, pero que no depende de que haya medida en nuestro espacio
+fase es la de *"transitividad topológica"*. Es la que van a encontrar en muchos
+tratados matemáticos, en particular en el libro de Jefferson King y Hector Mendez.
+La noción, obviamente, depende de que haya una topología, es decir, una familia
+de conjuntos abiertos.
+La transitividad topológica básicamente nos dice que para todo par de
+conjuntos abiertos,
+en algun momento la imagen de uno debida a la dinámica intersecta al otro:
+
+Existe t tal que T^t(U) interseccion V != vacio.
+
+Se llama transitividad topológica porque esto implica que en promedio los
+puntos de un conjunto abiertos *transitan* por todos los conjuntos abiertos.
+
+Observemos que ésta noción es muy parecida a la de mezclante. De hecho, si nuestra
+medida es sobre los Borelianos, entonces son *casi* equivalentes. La medida
+de mezclante nos dice de forma intuitiva que, conforme pasa el tiempo,
+en cualquier región del espacio fase vamos a encontrar imágenes de
+cualquier otra región en una cantidad proporcional al tamaño de la última.
+
+lim t-> inf (mu(U) int V) = mu(U) mu(V)
+
+Sin embargo, a pesar de lo parecido de ambas nociones, uno puede
+encontrar sistemas que son una cosa mas no la otra.
+
+Recientemente hablamos de la propiedad de hiperbolicidad: Si nuestro
+sistema dinámico es diferenciable y las reglas que lo definen admiten
+derivadas, podemos hablar de exponentes
+de Liapunov. Sí para casi toda órbita del sistema encontramos exponentes
+de Liapunov positivos, quiere decir que en promedio las órbitas se separan
+a taza exponencial unas de otras, entonces decimos que el sistema es
+hiperbólico. En la clase anterior definí el exponente de Liapunov para
+un sistema discreto, pero podemos hablar de forma más general del
+*máximo* exponente de Liapunov de la siguiente forma
+
+lim t-> inf lim delta x -> 0 (ln |dx(t)/dx_0|)/t =: lambda.
+
+Es decir, que tanto va creciendo "un vectorcito" que siga  la orbita
+de x, respecto a una taza exponencial. Esta definición coincide con
+la de la suma de logaritmos de derivadas que les di la clase pasada
+para sistemas discretos.
+
+En algunos casos la hiperbolicidad implica ergodicidad, pero esto
+resulta muy dificil de demostrar en sistemas generales. Esta noción
+es la que más cercana se encuentra a nuestra idea intuitiva de
+"separación de órbitas", dado que dice que incluso a nivel diferencial
+hay una taza de alejamiento, es decir, de pérdida de información. 
+
+Una noción menos restrictiva es la llamada estabilidad de Liapunov, que
+fue la que originalmente trató Aleksandr Liapunov en 1892, en su libro
+"El Problema General de la Estabilidad en Movimiento". Nótosese que eran los
+mismos años en que Poincaré publicó su libro de Mecánica Celeste en donde
+habla del problema de la irreducibilidad de los tres cuerpos.
+La estabilidad de Liapunov es, informalmente, lo siguiente:
+
+* Un punto de equilibrio es estable en el sentido de Liapunov si las
+soluciones para condiciones cercanas al punto se mantienen cercanas a la solución
+del punto en cuestión. Dense cuenta que es trivial generalizar esto para
+orbitas cualquiera. Si el punto es un punto fijo, x_0, entonces existe
+una vecindad V de x_0 tal que, para cada \epsilon>0 existe un delta>0 tal que:
+| x_o -x|< delta | x_o -x(t) |< epsilon para todo t.
+* Se dice que además es asintóticamente estable si aparte de ser Liapunov-estable
+es atractor, es decir, lim | x_o -x(t)| =0.
+* Se dice además que es exponencialmente estable si la taza a la que se acerca
+es exponencial. Esto es, hay tres constantes mayores a cero, alfa, beta y delta, tal
+que si
+| x_o -x|< delta
+entonces
+| x_o -x(t)|< \alfa |x_o -x| exp(-beta t). para todo t.
+
+
+
+
