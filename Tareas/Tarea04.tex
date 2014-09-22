@@ -1,0 +1,88 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx} 
+\usepackage{float} %Forzamos a las figuras a estar DONDE QUEREMOS
+\usepackage{url}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\rd}{\!\!\mathrm{d}}
+ 
+\newenvironment{theorem}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Ejercicio]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Pregunta]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Tarea Semanal 4}%replace X with the appropriate number
+\author{Karel Zapfe\\ %replace with your name
+Introducción al Caos y Dinámica No Lineal} %if necessary, replace with your course title
+ 
+\maketitle
+
+La \emph{Scholarpedia} es un intento de crear una \emph{wiki},
+pero revisada por pares, de forma que la información que se encuentra ahí 
+sea confiable y citable en artículos. Desgraciadamente las contribuciones
+son muy escazas todavía. Vamos a darle un poco de público. \\
+(\url{http://www.scholarpedia.org})
+
+\begin{problem}{Lecturas}
+
+Leer los siguientes artículos de la \emph{Scholarpedia}:
+
+\begin{itemize}
+\item Transitividad Topológica \\
+  \url{http://www.scholarpedia.org/article/Topological_transitivity}
+\item Dinámica simbólica\\
+  \url{http://www.scholarpedia.org/article/Symbolic_dynamics}
+  \item Dinámica hiperbólica \\
+    \url{http://www.scholarpedia.org/article/Hyperbolic_dynamics}
+\end{itemize}
+Los artículos están escritos en un lenguaje sofisticado y general, y son
+pesados de leer. Sin embargo es muy importante que afiancen estos conceptos,
+asi que hagan un esfuerzo y hagan diagramas de los razonamientos dificiles.
+\end{problem}
+
+\begin{question}{1}
+
+La medida que preserva el mapeo de Bernoulli es un poco
+latosa de deducir, pero el mapeo es continuo, asi que podemos
+suponer que la medida está definida sobre los Borelianos\ldots
+\begin{itemize}
+  \item ¡¿Qué qué?! Parafrasear lo que escribí arriba en un lenguaje
+    menos formal. Recuerda, ¿Qué quiere decir continuidad? 
+    ¿Cuales son los abiertos que nos gustan a los físicos?
+    Demuestra entonces que se cumple la nocion de continuidad usando
+    esa definición (algo sobre ``preservar''\ldots).
+  \item El mapeo es topológicamente transitivo. Demostrar.
+  \item A nosotros nos gustan los dibujos. Ilustra la demostración anterior.
+
+\end{itemize}      
+
+\end{question}
+
+
+\end{document}

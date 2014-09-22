@@ -1,0 +1,14 @@
+
+unset key
+#Le ponemos nombre a los ejes
+set xl "theta"
+set yl "l"
+set cbl "Energia"
+#escogemos la terminal... en este caso, un archivo png
+#pueden ver otras opciones de gnuplot para escribir archivos con "help term"
+set term pngcairo size 750,450 enhanced 
+#Abrimos la terminal de dibujo
+set out "NombreDibujo.png"
+plot "EspacioFasePendulo02.dat" usi 1:2:4 w d palette
+#y la cerramos
+set out
