@@ -16,7 +16,7 @@ maxprints=512 # Iteraciones para imprimir
 
 xini=0.28347928 # x inicial
 kmin=2.8 # k inicial
-kmax=3.7 # k final
+kmax=3.58 # k final
 
 #archivos de datos
 arbol=open("ArbolFeigenBaum01.dat", "w")
