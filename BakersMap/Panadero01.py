@@ -17,7 +17,7 @@ def Mapeo(x,y):
 # -----------------------------------------------------------
     
 
-tmax=4
+tmax=6
 puntosmax=1000
 datos=open('PuntosPanadero', 'w')
 jmax=3
